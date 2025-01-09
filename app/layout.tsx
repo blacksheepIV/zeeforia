@@ -1,16 +1,18 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Quicksand } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/app/components/NavBar'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const quickSand = Quicksand({
+  variable: '--font-quick-sand',
   subsets: ['latin'],
+  display: 'swap',
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+// const geistMono = Geist_Mono({
+//   variable: '--font-geist-mono',
+//   subsets: ['latin'],
+// })
 
 export const metadata: Metadata = {
   title: 'Zeef Oria: A Renaissance of Art and Resilience After 30 Years',
@@ -25,10 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${quickSand.className} antialiased`}>
+        <Navbar />
+        <div className="px-3 pt-24">{children}</div>
       </body>
     </html>
   )
