@@ -8,9 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'fade-gradiant':
+          'linear-gradient(to right, rgba(0, 0, 0, 0), #22306e, rgba(0, 0, 0, 0));',
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+
         delftBlue: {
           DEFAULT: '#22306e',
           100: '#5369CA',
@@ -75,10 +80,7 @@ export default {
         // mono: ['var(--font-roboto-mono)'],
       },
       boxShadow: {
-        custom: `-4px -3px 15px rgba(255, 255, 255, 0.5),
-        4px 4px 15px rgba(70, 70, 70, 0.12),
-        inset -2px -2px 15px rgba(255, 255, 255, 0.5),
-        inset 6px 6px 15px rgba(70, 70, 70, 0.12)`,
+        custom: `-1px -5px 15px -6px #E0E4F5`,
       },
     },
   },

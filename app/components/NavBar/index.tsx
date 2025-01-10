@@ -15,7 +15,7 @@ function Navbar() {
               <Link
                 href={navItem.path}
                 key={`${index}-${navItem.title}`}
-                className="block text-black sm:text-xl rounded md:p-0 hover:text-delftBlue-400 cursor-pointer"
+                className="block text-black sm:text-xl font-medium rounded md:p-0 hover:text-delftBlue-400 cursor-pointer"
               >
                 {navItem.title}
               </Link>
