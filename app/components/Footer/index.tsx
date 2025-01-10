@@ -13,7 +13,7 @@ function Footer() {
       <p className="font-semibold">
         © {today?.getFullYear()} Zeeforia. All rights reserved.
       </p>
-      <p>Made with love and pixels by Foroogh.</p>
+      <p className="text-sm">Made with love and pixels by Foroogh.</p>
     </div>
   )
 }
