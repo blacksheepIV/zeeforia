@@ -1,19 +1,21 @@
 import type { Metadata } from 'next'
-import { Quicksand } from 'next/font/google'
+import { Quicksand, Montserrat } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/app/components/NavBar'
 import Footer from '@/app/components/Footer'
 
 const quickSand = Quicksand({
-  variable: '--font-quick-sand',
+  variable: '--font-quicksand',
   subsets: ['latin'],
   display: 'swap',
 })
 
-// const geistMono = Geist_Mono({
-//   variable: '--font-geist-mono',
-//   subsets: ['latin'],
-// })
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Zeef Oria: A Renaissance of Art and Resilience After 30 Years',
@@ -28,9 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${quickSand.className} antialiased`}>
+      <body
+        className={`${quickSand.variable} ${montserrat.variable} antialiased`}
+      >
         <Navbar />
-        <div className="px-3 pt-24">{children}</div>
+        <div className="min-h-full pt-[64px] pb-[128px]">{children}</div>
         <Footer />
       </body>
     </html>

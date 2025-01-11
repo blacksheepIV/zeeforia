@@ -1,25 +1,43 @@
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { navbarItems } from './constants'
+import { useRouter } from 'next/navigation'
+import clsx from 'clsx'
 
 function Navbar() {
+  const router = useRouter()
+  const [selectedIndex, setSelectedindex] = useState(0)
+
+  const navigateTo = (index: number, path: string) => {
+    setSelectedindex(index)
+    router.push(path)
+  }
   return (
     <nav>
-      <div className=" fixed top-0 left-0 h-20 z-10 bg-[#eef0fb] bg-opacity-90 flex w-full justify-between align-middle mx-auto p-4 pl-2 shadow-sm ">
-        <Link href={'/'} className="text-black font-bold text-4xl">
-          <Image src="/logo.png" alt="Logo" width={50} height={50} />
+      <div className=" fixed top-0 left-0 h-16 z-10 bg-white bg-opacity-90 flex w-full justify-between items-center mx-auto pr-4 pl-2 pb-2 shadow-sm ">
+        <Link href={'/'} className="hover:animate-rotate-y-180 pt-2">
+          <Image src="/logo.png" alt="Logo" width={50} height={40} />
         </Link>
-        <div className="menu ">
+        <div className="menu">
           <ul className="flex flex-row gap-6">
             {navbarItems.map((navItem, index) => (
-              <Link
-                href={navItem.path}
+              <div
+                onClick={() => navigateTo(index, navItem.path)}
                 key={`${index}-${navItem.title}`}
-                className="block text-black sm:text-xl font-medium rounded md:p-0 hover:text-delftBlue-400 cursor-pointer"
+                className={clsx(
+                  'font-montserrat text-sm font-medium pb-2 cursor-pointer',
+                  {
+                    'text-delftBlue-400 border-b-2 border-b-delftBlue-400':
+                      selectedIndex === index,
+                    'text-black hover:text-delftBlue-400':
+                      selectedIndex !== index,
+                  },
+                )}
               >
                 {navItem.title}
-              </Link>
+              </div>
             ))}
           </ul>
         </div>

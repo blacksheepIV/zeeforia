@@ -76,11 +76,20 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['var(--font-quicksand)', 'sans-serif'],
-        // mono: ['var(--font-roboto-mono)'],
+        sans: ['var(--font-quicksand)'],
+        montserrat: ['var(--font-montserrat)'],
       },
       boxShadow: {
         custom: `-1px -5px 15px -6px #E0E4F5`,
+      },
+
+      keyframes: {
+        rotateY: {
+          '100%': { transform: 'rotateY(180deg)' },
+        },
+      },
+      animation: {
+        'rotate-y-180': 'rotateY 1.2s linear',
       },
     },
   },
