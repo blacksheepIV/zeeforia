@@ -1,14 +1,22 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { navbarItems } from './constants'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
 function Navbar() {
   const router = useRouter()
+  const pathName = usePathname()
   const [selectedIndex, setSelectedindex] = useState(0)
+
+  useEffect(() => {
+    const currentIndex = navbarItems.findIndex(
+      navItem => navItem.path === pathName,
+    )
+    if (currentIndex !== -1) setSelectedindex(currentIndex)
+  }, [pathName])
 
   const navigateTo = (index: number, path: string) => {
     setSelectedindex(index)
