@@ -8,10 +8,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'fade-gradiant':
-          'linear-gradient(to right, rgba(0, 0, 0, 0), #22306e, rgba(0, 0, 0, 0));',
-      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',

@@ -1,7 +1,11 @@
 import React from 'react'
 
 function ContactPage() {
-  return <div className="container">ContactPage</div>
+  return (
+    <section className="container mx-auto">
+      <div className="flex flex-col gap"></div>
+    </section>
+  )
 }
 
 export default ContactPage

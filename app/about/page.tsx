@@ -6,7 +6,7 @@ function AboutPage() {
     <section className="container mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between items-center font-montserrat py-8 px-4">
         <div className="flex flex-col items-start gap-2 lg:order-1 order-2">
-          <h2 className="font-semibold text-xl text-raisinBlack-600">
+          <h2 className="font-semibold text-xl text-delftBlue">
             About Zeef Oria
           </h2>
           <p className="text-base sm:text-md lg:text-base text-raisinBlack-400 text-justify">
