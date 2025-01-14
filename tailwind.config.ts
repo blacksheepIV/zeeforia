@@ -83,9 +83,20 @@ export default {
         rotateY: {
           '100%': { transform: 'rotateY(180deg)' },
         },
+        'fade-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(30px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
       },
       animation: {
         'rotate-y-180': 'rotateY 1.2s linear',
+        'fade-up': 'fade-up 1.0s ease-out',
       },
     },
   },

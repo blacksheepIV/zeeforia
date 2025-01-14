@@ -5,7 +5,7 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden">
       <div className="relative container mx-auto px-4 pt-20 pb-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-up">
             <h1 className="font-montserrat text-6xl lg:text-7xl font-bold text-delftBlue">
               Zeef <span className="text-amaranthPurple">Oria</span>
             </h1>
@@ -21,6 +21,7 @@ export default function Home() {
           </div>
 
           <div className="relative">
+            <div className="absolute md:top-[22px] md:left-[10px] w-full md:min-h-[500px] top-2 left-2 min-h-full  hero-image rounded-lg shadow-2xl overflow-hidden bg-frenchGray"></div>
             <div className="hero-image rounded-lg shadow-2xl overflow-hidden">
               <img
                 src="/cover.png"
