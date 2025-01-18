@@ -6,10 +6,10 @@ function AboutPage() {
     <section className="container mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between items-center font-montserrat py-8 px-4">
         <div className="flex flex-col items-start gap-2 lg:order-1 order-2">
-          <h2 className="font-semibold text-xl text-delftBlue">
+          <h2 className="font-semibold text-xl text-delft_blue">
             About Zeef Oria
           </h2>
-          <p className="text-base sm:text-md lg:text-base text-raisinBlack-400 text-justify">
+          <p className="text-base sm:text-md lg:text-base text-raisin_black-400 text-justify">
             Born in 1972, Zeef Oria is a contemporary artist whose journey in
             art began in his twenties. A remarkable talent emerged during these
             early years, earning him 3rd place in the prestigious (Visual Arts
@@ -22,7 +22,7 @@ function AboutPage() {
             Oria amassed a reservoir of stories, emotions, and insights waiting
             to take form.
           </p>
-          <p className="text-base sm:text-lg lg:text-base text-raisinBlack-400 text-justify">
+          <p className="text-base sm:text-lg lg:text-base text-raisin_black-400 text-justify">
             Now, after three decades, Zeef returns to his passion with a renewed
             vision. This period of absence has become a wellspring of
             inspiration, allowing him to channel a lifetime of experiences into
@@ -31,7 +31,7 @@ function AboutPage() {
             the rich tapestry of human experience, imbued with a profound
             understanding of life’s complexities.
           </p>
-          <p className="text-base sm:text-lg lg:text-base text-raisinBlack-400 text-justify">
+          <p className="text-base sm:text-lg lg:text-base text-raisin_black-400 text-justify">
             Zeef Oria’s return to the art world is not just a continuation of
             his journey; it is a renaissance. With every brushstroke and every
             piece, he transforms the echoes of his 30-year silence into a

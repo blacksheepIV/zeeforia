@@ -37,9 +37,9 @@ function Navbar() {
                 className={clsx(
                   'font-montserrat text-sm font-medium pb-2 cursor-pointer',
                   {
-                    'text-delftBlue-400 border-b-2 border-b-delftBlue-400':
+                    'text-delft_blue-400 border-b-2 border-b-delft_blue-400':
                       selectedIndex === index,
-                    'text-black hover:text-delftBlue-400':
+                    'text-black hover:text-delft_blue-400':
                       selectedIndex !== index,
                   },
                 )}
