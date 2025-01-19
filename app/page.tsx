@@ -3,7 +3,14 @@
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <div className="relative container mx-auto px-4 pt-20 pb-32">
+      <video
+        src="/hero.mp4"
+        autoPlay
+        loop
+        muted
+        className="w-full h-full object-cover"
+      />
+      {/* <div className="relative container mx-auto px-4 pt-20 pb-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-up">
             <h1 className="font-montserrat text-6xl lg:text-7xl font-bold text-delft_blue">
@@ -31,7 +38,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   )
 }

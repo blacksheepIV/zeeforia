@@ -24,7 +24,7 @@ function Navbar() {
   }
   return (
     <nav>
-      <div className=" fixed top-0 left-0 h-16 z-10 bg-white bg-opacity-90 flex w-full justify-between items-center mx-auto pr-4 pl-2 pb-2 shadow-sm ">
+      <div className="fixed top-0 left-0 h-16 z-10 bg-white bg-opacity-0 flex w-full justify-between items-center mx-auto pr-4 pl-2 pb-2">
         <Link href={'/'} className="hover:animate-rotate-y-180 pt-2">
           <Image src="/logo.png" alt="Logo" width={50} height={40} />
         </Link>
@@ -39,7 +39,7 @@ function Navbar() {
                   {
                     'text-delft_blue-400 border-b-2 border-b-delft_blue-400':
                       selectedIndex === index,
-                    'text-black hover:text-delft_blue-400':
+                    'text-white hover:text-delft_blue-400':
                       selectedIndex !== index,
                   },
                 )}
