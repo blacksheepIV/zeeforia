@@ -1,15 +1,28 @@
 //import Image from 'next/image'
+import AboutSection from './components/about'
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main id="home" className="relative h-full min-h-screen overflow-hidden">
       <video
         src="/hero.mp4"
         autoPlay
         loop
         muted
-        className="w-full h-full object-cover"
-      />
+        className="w-[auto] h-full object-cover"
+      >
+        Your browser does not support the video tag.
+      </video>
+      <div className="absolute top-[120px] left-8 flex flex-col items-start justify-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-white animate-slide-in-left">
+          Zeef Oria
+        </h1>
+        <p className="text-lg md:text-xl text-white animate-slide-in-left delay-[2s] mt-3">
+          Discover Zeef Oria’s journey from silence to a vibrant artistic
+          revival, celebrating memory, resilience, and rediscovery.
+        </p>
+      </div>
+      <AboutSection />
       {/* <div className="relative container mx-auto px-4 pt-20 pb-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-up">

@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 
-function AboutPage() {
+function AboutSection() {
   return (
-    <section className="container mx-auto">
+    <section id="about" className="container mx-auto pt-2">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between items-center font-montserrat py-8 px-4">
-        <div className="flex flex-col items-start gap-2 lg:order-1 order-2">
+        <div className="flex flex-col items-start gap-2 lg:order-1 order-2 ">
           <h2 className="font-semibold text-xl text-delft_blue">
             About Zeef Oria
           </h2>
@@ -54,4 +54,11 @@ function AboutPage() {
   )
 }
 
-export default AboutPage
+export default AboutSection
+export const getStaticProps = async () => {
+  return {
+    props: {
+      title: 'About Zeef Oria',
+    },
+  }
+}

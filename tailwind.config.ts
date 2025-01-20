@@ -74,17 +74,14 @@ export default {
         },
       },
       fontFamily: {
-        quicksand: ['var(--font-quicksand)','serif'],
-        montserrat: ['var(--font-montserrat)','sans-serif'],
+        quicksand: ['var(--font-quicksand)', 'serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
       },
       boxShadow: {
         custom: `-1px -5px 15px -6px #E0E4F5`,
       },
 
       keyframes: {
-        rotateY: {
-          '100%': { transform: 'rotateY(180deg)' },
-        },
         'fade-up': {
           '0%': {
             opacity: '0',
@@ -95,10 +92,14 @@ export default {
             transform: 'translateY(0)',
           },
         },
+        'slide-in-left': {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
       },
       animation: {
-        'rotate-y-180': 'rotateY 1.2s linear',
         'fade-up': 'fade-up 1.0s ease-out',
+        'slide-in-left': 'slide-in-left 1s ease-out',
       },
     },
   },
