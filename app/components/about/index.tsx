@@ -3,11 +3,11 @@ import React from 'react'
 
 function AboutSection() {
   return (
-    <section id="about" className="container mx-auto pt-2">
+    <section id="about" className="relative container mx-auto pt-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between items-center font-montserrat py-8 px-4">
         <div className="flex flex-col items-start gap-2 lg:order-1 order-2 ">
           <h2 className="font-semibold text-xl text-delft_blue">
-            About Zeef Oria
+            About Zeef <span className="text-amaranth_purple">Oria</span>
           </h2>
           <p className="text-base sm:text-md lg:text-base text-raisin_black-400 text-justify">
             Born in 1972, Zeef Oria is a contemporary artist whose journey in
@@ -41,13 +41,17 @@ function AboutSection() {
         </div>
 
         <div className="lg:order-2 order-1 lg:px-8 lg:row-span-2">
-          <Image
-            src="/about-img.jpg"
-            alt="Zeef oria's photo"
-            width={1200}
-            height={1000}
-            className="filter hover:grayscale-0 sm:grayscale-0 lg:grayscale transition duration-300"
-          />
+          <div className="relative">
+            <div className="absolute md:top-[22px] md:left-[10px] w-full md:min-h-[440px] top-2 left-2 min-h-full hero-image rounded-lg shadow-2xl overflow-hidden bg-delft_blue-300"></div>
+            <div className="hero-image rounded-lg shadow-2xl overflow-hidden w-full h-full">
+              <Image
+                src="/about-img.jpg"
+                alt="Zeef oria's photo"
+                width={1000}
+                height={750}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
