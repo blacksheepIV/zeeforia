@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import Image from 'next/image'
+//import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import { navbarItems } from './constants'
 import { usePathname } from 'next/navigation'
