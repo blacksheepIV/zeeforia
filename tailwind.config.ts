@@ -96,10 +96,16 @@ export default {
           '0%': { transform: 'translateX(-100%)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        appear: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '0.5' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
-        'fade-up': 'fade-up 1.0s ease-out',
+        'fade-up': 'fade-up 1.2s ease-out',
         'slide-in-left': 'slide-in-left 1s ease-out',
+        appear: 'appear 1s ease-in-out',
       },
     },
   },

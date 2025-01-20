@@ -1,11 +1,43 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import clsx from 'clsx'
 
 function AboutSection() {
+  const aboutRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.2 }, // Trigger when 20% of the section is visible
+    )
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="about" className="relative container mx-auto pt-6">
+    <section
+      id="about"
+      ref={aboutRef}
+      className="relative container mx-auto pt-6"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between items-center font-montserrat py-8 px-4">
-        <div className="flex flex-col items-start gap-2 lg:order-1 order-2 ">
+        <div
+          className={clsx(
+            'flex flex-col items-start gap-2 lg:order-1 order-2',
+            { 'animate-fade-up': isVisible },
+          )}
+        >
           <h2 className="font-semibold text-xl text-delft_blue">
             About Zeef <span className="text-amaranth_purple">Oria</span>
           </h2>
@@ -40,7 +72,11 @@ function AboutSection() {
           </p>
         </div>
 
-        <div className="lg:order-2 order-1 lg:px-8 lg:row-span-2">
+        <div
+          className={clsx('lg:order-2 order-1 lg:px-8 lg:row-span-2', {
+            'animate-appear': isVisible,
+          })}
+        >
           <div className="relative">
             <div className="absolute md:top-[22px] md:left-[10px] w-full md:min-h-[440px] top-2 left-2 min-h-full hero-image rounded-lg shadow-2xl overflow-hidden bg-delft_blue-300"></div>
             <div className="hero-image rounded-lg shadow-2xl overflow-hidden w-full h-full">

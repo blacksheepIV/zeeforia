@@ -3,12 +3,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import { navbarItems } from './constants'
-import { usePathname } from 'next/navigation'
+// import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
 function Navbar() {
-  const pathName = usePathname()
-  const [selectedIndex, setSelectedindex] = useState(0)
+  // const pathName = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -27,22 +26,20 @@ function Navbar() {
     }
   }, [])
 
-  useEffect(() => {
-    const currentIndex = navbarItems.findIndex(
-      navItem => navItem.path === pathName,
-    )
-    if (currentIndex !== -1) setSelectedindex(currentIndex)
-  }, [pathName])
+  // useEffect(() => {
+  //   const currentIndex = navbarItems.findIndex(
+  //     navItem => navItem.path === pathName,
+  //   )
+  //   if (currentIndex !== -1) setSelectedindex(currentIndex)
+  // }, [pathName])
 
   const handleScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     sectionId: string,
-    index: number,
   ) => {
     event.preventDefault()
     const target = document.getElementById(sectionId)
     if (target) {
-      setSelectedindex(index)
       target.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
@@ -67,17 +64,13 @@ function Navbar() {
             {navbarItems.map((navItem, index) => (
               <Link
                 href="#"
-                onClick={e => handleScroll(e, navItem.path, index)}
+                onClick={e => handleScroll(e, navItem.path)}
                 key={`${index}-${navItem.title}`}
                 className={clsx(
-                  'font-montserrat text-sm font-medium pb-2 cursor-pointer',
+                  'font-montserrat text-base font-medium pb-2 cursor-pointer hover:text-delft_blue-800',
+                  { 'text-white': !isScrolled },
                   {
-                    'text-delft_blue-800 border-b-2 border-b-delft_blue-400':
-                      selectedIndex === index,
-                    'text-white hover:text-delft_blue-400':
-                      selectedIndex !== index && !isScrolled,
-                    'text-black hover:text-delft_blue-400':
-                      selectedIndex !== index && isScrolled,
+                    'text-black': isScrolled,
                   },
                 )}
               >
