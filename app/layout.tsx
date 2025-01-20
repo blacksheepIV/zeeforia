@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${quickSand.variable} ${montserrat.variable} antialiased`}
       >
         <Navbar />
-        <div className="min-h-full pt-[64px] pb-[128px]">{children}</div>
+        <div className="min-h-full pt pb-[128px]">{children}</div>
         <Footer />
       </body>
     </html>
