@@ -31,7 +31,7 @@ function AboutSection() {
             the rich tapestry of human experience, imbued with a profound
             understanding of life’s complexities.
           </p>
-          <p className="text-base sm:text-lg lg:text-base text-raisin_black-400 text-justify">
+          <p className="text-base sm:text-lg lg:text-base text-raisin_black-400 text-left">
             Zeef Oria’s return to the art world is not just a continuation of
             his journey; it is a renaissance. With every brushstroke and every
             piece, he transforms the echoes of his 30-year silence into a
