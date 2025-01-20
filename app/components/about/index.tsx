@@ -9,7 +9,7 @@ function AboutSection() {
           <h2 className="font-semibold text-xl text-delft_blue">
             About Zeef <span className="text-amaranth_purple">Oria</span>
           </h2>
-          <p className="text-base sm:text-md lg:text-base text-raisin_black-400 text-justify">
+          <p className="text-base sm:text-md lg:text-base text-raisin_black-400 text-left">
             Born in 1972, Zeef Oria is a contemporary artist whose journey in
             art began in his twenties. A remarkable talent emerged during these
             early years, earning him 3rd place in the prestigious (Visual Arts
@@ -22,7 +22,7 @@ function AboutSection() {
             Oria amassed a reservoir of stories, emotions, and insights waiting
             to take form.
           </p>
-          <p className="text-base sm:text-lg lg:text-base text-raisin_black-400 text-justify">
+          <p className="text-base sm:text-lg lg:text-base text-raisin_black-400 text-left">
             Now, after three decades, Zeef returns to his passion with a renewed
             vision. This period of absence has become a wellspring of
             inspiration, allowing him to channel a lifetime of experiences into
