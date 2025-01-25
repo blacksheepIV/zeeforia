@@ -15,17 +15,26 @@ function Footer() {
         © {today?.getFullYear()} Zeef oria. All rights reserved.
       </p>
       <div className="mt-5 w-full flex gap-3 justify-center items-center">
-        <a href="https://www.instagram.com/zeef_oria/" target="_blank">
+        <a
+          href="https://www.instagram.com/zeef_oria/"
+          target="_blank"
+          className="hover:scale-125"
+        >
           <InstagramIcon width={30} height={30} />
         </a>
         <a
           href="https://youtube.com/@zeeforia?si=g-C1rerJMBhhyuWg"
           target="_blank"
+          className="hover:scale-125"
         >
           <YoutubeIcon width={30} height={30} />
         </a>
 
-        <a href="mailto:art@zeeforia.com`" target="_blank">
+        <a
+          href="mailto:art@zeeforia.com`"
+          target="_blank"
+          className="hover:scale-125"
+        >
           <EmailIcon width={30} height={30} />
         </a>
       </div>

@@ -1,24 +1,60 @@
+import Image from 'next/image'
 import React from 'react'
 
+type ArtworkType = { title: string; path: string; info: string }
+
 function Spotlight() {
+  const latestWorks: ArtworkType[] = [
+    {
+      title: 'Fragmented Harmony',
+      path: 'fragmented_harmony.jpg',
+      info: 'Oil on Canvas 80X100',
+    },
+    {
+      title: 'Melody in Fragment',
+      path: 'melody_in_ fragments.jpg',
+      info: 'Oil on Canvas 80X100',
+    },
+    {
+      title: 'Power',
+      path: 'power.jpg',
+      info: 'Oil on Canvas 80X100',
+    },
+  ]
   return (
-    <section id="spotlight" className="relative container mx-auto pt-6">
+    <section
+      id="spotlight"
+      className="relative container mx-auto pt-6 lg:px-0 px-4"
+    >
       <div className="w-full">
-        <h2 className="text-3xl font-bold mb-12">Latest Works</h2>
+        <h2 className="font-semibold text-xl text-delft_blue mb-6">
+          Spot <span className="text-amaranth_purple">light</span>
+        </h2>
+        <p className="text-base font-normal mb-6">
+          Explore Zeeforia&aposs latest creations, showcasing recent
+          inspirations and techniques.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map(i => (
-            <div key={i} className="group relative overflow-hidden rounded-lg">
-              <img
-                src={`https://images.unsplash.com/photo-156${i}891654-e66ed7ebb968?auto=format&fit=crop&q=80&w=400`}
-                alt={`Artwork ${i}`}
-                className="w-full h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          {latestWorks.map(latestWork => (
+            <div
+              key={latestWork.title}
+              className="group relative overflow-hidden rounded-lg"
+            >
+              <div className="w-full h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-500 rounded-lg">
+                <Image
+                  src={`/spotlight/${latestWork.path}`}
+                  alt={latestWork.title}
+                  width={800}
+                  height={1200}
+                ></Image>
+              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 rounded-lg">
                 <div>
-                  <h3 className="text-xl font-bold">Artwork Title {i}</h3>
-                  <p className="text-sm text-gray-300">
-                    Mixed Media on Canvas, 2024
-                  </p>
+                  <h3 className="text-xl font-bold text-white">
+                    {latestWork.title}
+                  </h3>
+                  <p className="text-sm text-gray-300">{latestWork.info}</p>
                 </div>
               </div>
             </div>
