@@ -6,6 +6,6 @@ export interface NabarItem {
 export const navbarItems: Array<NabarItem> = [
   { title: 'Home', path: 'home' },
   { title: 'About', path: 'about' },
-  { title: 'Portfolio', path: 'portfolio' },
+  { title: 'Spotlight', path: 'spotlight' },
   { title: 'Contact', path: 'contact' },
 ]

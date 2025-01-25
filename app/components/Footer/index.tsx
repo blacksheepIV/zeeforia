@@ -13,16 +13,6 @@ function Footer() {
       <p className="font-semibold">
         © {today?.getFullYear()} Zeef oria. All rights reserved.
       </p>
-      <p className="text-sm">
-        Made with love and pixels by{' '}
-        <a
-          href="https://www.forough.dev"
-          target="_blank"
-          className="text-delft_blue-300"
-        >
-          Foroogh.
-        </a>
-      </p>
     </div>
   )
 }
