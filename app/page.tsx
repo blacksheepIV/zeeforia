@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 //import Image from 'next/image'
-import AboutSection from './components/tempAbout'
+import AboutSection from '@/app/components/About'
 
 export default function Home() {
   const [videoError, setVideoError] = useState(false)
