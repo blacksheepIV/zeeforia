@@ -57,7 +57,7 @@ function Navbar() {
             <Link href={'/'} className="pt-2">
               <Image src="/logo.png" alt="Logo" width={60} height={55} />
             </Link>
-            <span className="lg:text-lg sm:text-sm  font-montserrat font-normal tracking-widest absolute left-[50px] top-[38px]">
+            <span className="lg:text-base sm:text-sm  font-montserrat font-normal tracking-widest absolute left-[50px] top-[38px]">
               ZEEF ORIA
             </span>
           </div>

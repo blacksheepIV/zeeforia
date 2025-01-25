@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 type ArtworkType = { title: string; path: string; info: string }
@@ -27,10 +28,11 @@ function Spotlight() {
       className="relative container mx-auto pt-6 lg:px-0 px-4"
     >
       <div className="w-full">
-        <h2 className="font-semibold text-xl text-delft_blue mb-6">
-          Spot <span className="text-amaranth_purple">light</span>
+        <h2 className="font-montserrat font-semibold text-xl text-delft_blue mb-6 tracking-widest">
+          Spot{' '}
+          <span className="text-amaranth_purple tracking-widest">light</span>
         </h2>
-        <p className="text-base font-normal mb-6">
+        <p className="text-base font-normal mb-6 font-quicksand">
           Explore Zeeforia&aposs latest creations, showcasing recent
           inspirations and techniques.
         </p>
@@ -60,6 +62,14 @@ function Spotlight() {
             </div>
           ))}
         </div>
+        <Link
+          className="mt-12 flex justify-center align-middle"
+          href="/portfolio"
+        >
+          <button className="rounded-md bg-delft_blue text-white text-center font-quicksand p-3 hover:transition-colors hover:bg-opacity-90 font-quicksand">
+            See All Works
+          </button>
+        </Link>
       </div>
     </section>
   )
