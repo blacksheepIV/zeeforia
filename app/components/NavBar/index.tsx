@@ -2,16 +2,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
+import { MenuIcon } from '@/app/components/Icons'
 import { navbarItems } from './constants'
-// import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
 function Navbar() {
-  // const pathName = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollTo = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true)
       } else {
@@ -19,21 +19,14 @@ function Navbar() {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScrollTo)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', handleScrollTo)
     }
   }, [])
 
-  // useEffect(() => {
-  //   const currentIndex = navbarItems.findIndex(
-  //     navItem => navItem.path === pathName,
-  //   )
-  //   if (currentIndex !== -1) setSelectedindex(currentIndex)
-  // }, [pathName])
-
-  const handleScroll = (
+  const handleScrollTo = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     sectionId: string,
   ) => {
@@ -43,6 +36,11 @@ function Navbar() {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : ''
+  }, [isMenuOpen])
+
   return (
     <nav>
       <div
@@ -56,21 +54,21 @@ function Navbar() {
       >
         {isScrolled && (
           <Link href={'/'} className="pt-2">
-            <Image src="/logo.png" alt="Logo" width={80} height={80} />
+            <Image src="/logo.png" alt="Logo" width={44} height={44} />
           </Link>
         )}
-        <div className="menu">
+        <div className="menu hidden lg:flex">
           <ul className="flex flex-row gap-6">
             {navbarItems.map((navItem, index) => (
               <Link
                 href="#"
-                onClick={e => handleScroll(e, navItem.path)}
+                onClick={e => handleScrollTo(e, navItem.path)}
                 key={`${index}-${navItem.title}`}
                 className={clsx(
-                  'font-montserrat text-base font-medium pb-2 cursor-pointer hover:text-delft_blue-800',
+                  'font-montserrat text-base font-medium pb-2 cursor-pointer relative transition-all duration-300 hover:translate-y-[-2px] hover:opacity-80',
                   { 'text-white': !isScrolled },
                   {
-                    'text-black': isScrolled,
+                    'text-black hover:text-raisin_black-800': isScrolled,
                   },
                 )}
               >
@@ -78,6 +76,40 @@ function Navbar() {
               </Link>
             ))}
           </ul>
+        </div>
+        <div className="burger lg:hidden" onClick={() => setIsMenuOpen(true)}>
+          <MenuIcon fill={isScrolled ? '#000' : '#fff'} className="size-8" />
+        </div>
+        <div
+          className={clsx(
+            'fixed top-0 right-0 h-full w-full overflow-hidden bg-raisin_black-500 bg-opacity-95 shadow-lg transform transition-transform duration-500',
+            { 'translate-x-0': isMenuOpen, 'translate-x-full': !isMenuOpen },
+          )}
+        >
+          <div className="p-4">
+            <button
+              className="close-btn text-white text-3xl"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              &times;
+            </button>
+            <ul className="mt-12 space-y-4 flex flex-col gap-5 height-[500px] items-center ">
+              {navbarItems.map((navItem, index) => (
+                <li key={`${index}-${navItem.title}`}>
+                  <Link
+                    href="#"
+                    onClick={e => {
+                      setIsMenuOpen(false)
+                      handleScrollTo(e, navItem.path)
+                    }}
+                    className="block text-3xl font-medium text-white"
+                  >
+                    {navItem.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
