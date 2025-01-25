@@ -78,7 +78,7 @@ function AboutSection() {
           })}
         >
           <div className="relative">
-            <div className="absolute md:top-[22px] md:left-[10px] w-full md:min-h-[360px] top-2 left-2 min-h-full hero-image rounded-lg shadow-2xl overflow-hidden bg-delft_blue-300"></div>
+            <div className="absolute md:top-[22px] md:left-[10px] w-full  top-2 left-2 min-h-full hero-image rounded-lg shadow-2xl overflow-hidden bg-delft_blue-300"></div>
             <div className="hero-image rounded-lg shadow-2xl overflow-hidden w-full h-full">
               <Image
                 src="/about-img.jpg"

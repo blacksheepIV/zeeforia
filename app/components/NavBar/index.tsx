@@ -53,9 +53,14 @@ function Navbar() {
         )}
       >
         {isScrolled && (
-          <Link href={'/'} className="pt-2">
-            <Image src="/logo.png" alt="Logo" width={44} height={44} />
-          </Link>
+          <div className="relative flex gap-[2px] justify-start items-center min-w-[200px]">
+            <Link href={'/'} className="pt-2">
+              <Image src="/logo.png" alt="Logo" width={60} height={55} />
+            </Link>
+            <span className="lg:text-lg sm:text-sm  font-montserrat font-normal tracking-widest absolute left-[50px] top-[38px]">
+              ZEEF ORIA
+            </span>
+          </div>
         )}
         <div className="menu hidden lg:flex">
           <ul className="flex flex-row gap-6">
@@ -77,7 +82,7 @@ function Navbar() {
             ))}
           </ul>
         </div>
-        <div className="burger lg:hidden" onClick={() => setIsMenuOpen(true)}>
+        <div className="burger lg:hidden " onClick={() => setIsMenuOpen(true)}>
           <MenuIcon fill={isScrolled ? '#000' : '#fff'} className="size-8" />
         </div>
         <div
