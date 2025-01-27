@@ -29,11 +29,11 @@ function Spotlight() {
     >
       <div className="w-full">
         <h2 className="font-montserrat font-semibold text-xl text-delft_blue mb-6 tracking-widest">
-          Spot{' '}
+          Spot
           <span className="text-amaranth_purple tracking-widest">light</span>
         </h2>
         <p className="text-base font-normal mb-6 font-quicksand">
-          Explore Zeeforia&aposs latest creations, showcasing recent
+          Explore Zeeforia&apos;s latest creations, showcasing recent
           inspirations and techniques.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

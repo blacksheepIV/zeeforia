@@ -20,14 +20,14 @@ function Footer() {
           target="_blank"
           className="hover:scale-125"
         >
-          <InstagramIcon width={30} height={30} />
+          <InstagramIcon width={30} height={30} fill="#267bcc" />
         </a>
         <a
           href="https://youtube.com/@zeeforia?si=g-C1rerJMBhhyuWg"
           target="_blank"
           className="hover:scale-125"
         >
-          <YoutubeIcon width={30} height={30} />
+          <YoutubeIcon width={30} height={30} fill="#267bcc" />
         </a>
 
         <a
@@ -35,7 +35,7 @@ function Footer() {
           target="_blank"
           className="hover:scale-125"
         >
-          <EmailIcon width={30} height={30} />
+          <EmailIcon width={30} height={30} fill="#267bcc" />
         </a>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { useState } from 'react'
 //import Image from 'next/image'
 import AboutSection from '@/app/components/About'
 import Spotlight from '@/app/components/Spotlight'
+import Contact from '@/app/components/contact'
 
 export default function Home() {
   const [videoError, setVideoError] = useState(false)
@@ -37,6 +38,7 @@ export default function Home() {
       </div>
       <AboutSection />
       <Spotlight />
+      <Contact />
     </main>
   )
 }
