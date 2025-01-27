@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Quicksand, Montserrat } from 'next/font/google'
-import './globals.css'
+import '@/app/globals.css'
 import Navbar from '@/app/components/NavBar'
 import Footer from '@/app/components/Footer'
 
@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${quickSand.variable} ${montserrat.variable} antialiased`}
       >
         <Navbar />
-        <div className="min-h-full pt pb-[128px]">{children}</div>
+        <div className="min-h-full">{children}</div>
         <Footer />
       </body>
     </html>

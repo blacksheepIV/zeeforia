@@ -82,7 +82,10 @@ function Navbar() {
             ))}
           </ul>
         </div>
-        <div className="burger lg:hidden " onClick={() => setIsMenuOpen(true)}>
+        <div
+          className="burger hidden lg:hidden sm:block "
+          onClick={() => setIsMenuOpen(true)}
+        >
           <MenuIcon fill={isScrolled ? '#000' : '#fff'} className="size-8" />
         </div>
         <div
