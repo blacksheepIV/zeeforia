@@ -31,7 +31,7 @@ function Footer() {
         </a>
 
         <a
-          href="mailto:art@zeeforia.com`"
+          href="mailto:art@zeeforia.com"
           target="_blank"
           className="hover:scale-125"
         >
