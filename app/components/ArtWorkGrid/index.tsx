@@ -15,7 +15,10 @@ export const ArtworkGrid = ({
   sortOption,
   selectedTags,
 }: ArtworkGridProps) => {
-  // if (isLoading) return <LoadingSpinner />;
+  if (isLoading)
+    return (
+      <span className="font-montserrat tracking-widest font-xl">Loding...</span>
+    )
 
   const filteredArtworks = artworks.filter(
     artwork =>
