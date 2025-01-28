@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { SpotlightArtworks } from '@/app/types'
 
-function Spotlight() {
+function LatestWorks() {
   const latestWorks: SpotlightArtworks[] = [
     {
       title: 'Fragmented Harmony',
@@ -23,13 +23,13 @@ function Spotlight() {
   ]
   return (
     <section
-      id="spotlight"
+      id="latestWorks"
       className="relative container mx-auto pt-6 lg:px-0 px-4"
     >
       <div className="w-full">
         <h2 className="font-montserrat font-semibold text-xl text-delft_blue mb-6 tracking-widest">
-          Spot
-          <span className="text-amaranth_purple tracking-widest">light</span>
+          Latest
+          <span className="text-amaranth_purple tracking-widest"> Works</span>
         </h2>
         <p className="text-base font-normal mb-6 font-quicksand">
           Explore Zeeforia&apos;s latest creations, showcasing recent
@@ -74,4 +74,4 @@ function Spotlight() {
   )
 }
 
-export default Spotlight
+export default LatestWorks

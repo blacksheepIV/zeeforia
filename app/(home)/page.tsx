@@ -2,7 +2,7 @@
 import { useState } from 'react'
 //import Image from 'next/image'
 import AboutSection from '@/app/components/About'
-import Spotlight from '@/app/components/Spotlight'
+import LatestWorks from '@/app/components/LatestWorks'
 import Contact from '@/app/components/contact'
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
         </p>
       </div>
       <AboutSection />
-      <Spotlight />
+      <LatestWorks />
       <Contact />
     </main>
   )
