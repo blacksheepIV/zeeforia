@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import { MenuIcon } from '@/app/components/Icons'
-import { navbarItems } from './constants'
+import { navbarItems } from '@/app/constants/menuItems'
 import clsx from 'clsx'
 
 function Navbar() {

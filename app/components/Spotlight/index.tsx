@@ -1,24 +1,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
-type ArtworkType = { title: string; path: string; info: string }
+import { SpotlightArtworks } from '@/app/types'
 
 function Spotlight() {
-  const latestWorks: ArtworkType[] = [
+  const latestWorks: SpotlightArtworks[] = [
     {
       title: 'Fragmented Harmony',
-      path: 'fragmented_harmony.jpg',
+      imageUrl: 'fragmented_harmony.jpg',
       info: 'Oil on Canvas 80X100',
     },
     {
       title: 'Melody in Fragment',
-      path: 'melody_in_ fragments.jpg',
+      imageUrl: 'melody_in_ fragments.jpg',
       info: 'Oil on Canvas 80X100',
     },
     {
       title: 'Power',
-      path: 'power.jpg',
+      imageUrl: 'power.jpg',
       info: 'Oil on Canvas 80X100',
     },
   ]
@@ -44,7 +43,7 @@ function Spotlight() {
             >
               <div className="w-full h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-500 rounded-lg">
                 <Image
-                  src={`/spotlight/${latestWork.path}`}
+                  src={`/collections/collection1/${latestWork.imageUrl}`}
                   alt={latestWork.title}
                   width={800}
                   height={1200}
@@ -66,7 +65,7 @@ function Spotlight() {
           className="mt-12 flex justify-center align-middle"
           href="/portfolio"
         >
-          <button className="rounded-md bg-delft_blue text-white text-center font-quicksand p-3 hover:transition-colors hover:bg-opacity-90 font-quicksand">
+          <button className="rounded-md bg-delft_blue text-white text-center font-quicksand p-3 hover:transition-colors hover:bg-opacity-90">
             See All Works
           </button>
         </Link>

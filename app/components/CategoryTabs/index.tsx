@@ -1,8 +1,9 @@
 import { clsx } from 'clsx'
+import type { ArtWorkCategory } from '@/app/types'
 
 interface CategoryTabsProps {
-  activeCategory: 'collections' | 'on the wall'
-  onCategoryChange: (category: 'collections' | 'on the wall') => void
+  activeCategory: ArtWorkCategory
+  onCategoryChange: (category: ArtWorkCategory) => void
 }
 
 const CategoryTabs = ({
@@ -36,7 +37,7 @@ const CategoryTabs = ({
         )}
         aria-current={activeCategory === 'on the wall' ? 'page' : undefined}
       >
-        the Wall
+        On the wall
         {activeCategory === 'on the wall' && (
           <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-steel_blue-600" />
         )}
