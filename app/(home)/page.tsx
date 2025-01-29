@@ -3,7 +3,7 @@ import { useState } from 'react'
 //import Image from 'next/image'
 import AboutSection from '@/app/components/About'
 import LatestWorks from '@/app/components/LatestWorks'
-import Contact from '@/app/components/contact'
+import Contact from '@/app/components/Contact'
 
 export default function Home() {
   const [videoError, setVideoError] = useState(false)
