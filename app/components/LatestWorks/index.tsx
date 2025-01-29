@@ -12,7 +12,7 @@ function LatestWorks() {
     },
     {
       title: 'Melody in Fragment',
-      imageUrl: 'melody_in_ fragments.jpg',
+      imageUrl: 'melody_in_fragments.jpg',
       info: 'Oil on Canvas 80X100',
     },
     {
