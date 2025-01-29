@@ -1,7 +1,8 @@
 import { clsx } from 'clsx'
-import { SortOption } from '@/app/types'
+import { SortOption, ArtWorkCategory } from '@/app/types'
 
 interface ControlsProps {
+  category: ArtWorkCategory
   sortOption: SortOption
   onSortChange: (option: SortOption) => void
   availableTags: string[]
@@ -10,6 +11,7 @@ interface ControlsProps {
 }
 
 export const Controls = ({
+  category,
   sortOption,
   onSortChange,
   availableTags,
@@ -18,23 +20,29 @@ export const Controls = ({
 }: ControlsProps) => {
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 px-4 font-quicksand">
-      <div className="flex flex-wrap gap-2">
-        {availableTags.map(tag => (
-          <button
-            key={tag}
-            onClick={() => onTagToggle(tag)}
-            className={clsx(
-              'px-3 py-1 rounded-full text-sm font-medium transition-colors',
-              selectedTags.includes(tag)
-                ? 'bg-delft_blue text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
-            )}
-            aria-pressed={selectedTags.includes(tag)}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
+      {category === 'collections' && (
+        <div className="flex flex-row items-center justify-between gap-1">
+          <span>Collections:</span>
+          <div className="flex flex-wrap gap-2">
+            {availableTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => onTagToggle(tag)}
+                className={clsx(
+                  'px-3 py-1 rounded-full text-sm font-medium transition-colors',
+                  selectedTags.includes(tag)
+                    ? 'bg-delft_blue text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
+                )}
+                aria-pressed={selectedTags.includes(tag)}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       <select
         value={sortOption}
         onChange={e => onSortChange(e.target.value as SortOption)}

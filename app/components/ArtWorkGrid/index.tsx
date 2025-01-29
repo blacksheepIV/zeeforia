@@ -56,7 +56,7 @@ const ArtworkCard = ({ artwork }: { artwork: Artwork }) => {
     >
       <div className="w-full h-full  transform group-hover:scale-110 transition-transform duration-500 rounded-lg">
         <Image
-          src={`/collections/collection1/${artwork.imageUrl}`}
+          src={`${artwork.imageUrl}`}
           alt={artwork.title}
           width={800}
           height={1200}

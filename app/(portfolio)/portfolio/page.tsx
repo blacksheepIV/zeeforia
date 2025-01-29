@@ -56,6 +56,7 @@ function PortfolioPage() {
 
       <main className="max-w-7xl mx-auto py-6">
         <Controls
+          category={activeCategory}
           sortOption={sortOption}
           onSortChange={setSortOption}
           availableTags={availableTags}
