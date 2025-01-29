@@ -14,7 +14,7 @@ export const artworks: Artwork[] = [
   {
     id: '2',
     title: 'Melody in Fragment',
-    imageUrl: '/collections/collection1/melody_in_ fragments.jpg',
+    imageUrl: '/collections/collection1/melody_in_fragments.jpg',
     info: 'Oil on Canvas 80X100',
     category: 'collections',
     tags: ['Lives in Motion'],
