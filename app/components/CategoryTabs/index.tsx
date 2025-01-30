@@ -22,7 +22,7 @@ const CategoryTabs = ({
         )}
         aria-current={activeCategory === 'collections' ? 'page' : undefined}
       >
-        Collection Name
+        Collections
         {activeCategory === 'collections' && (
           <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-steel_blue-600" />
         )}
