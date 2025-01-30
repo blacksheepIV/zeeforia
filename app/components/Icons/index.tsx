@@ -64,4 +64,60 @@ function EmailIcon(props: IconProps) {
   )
 }
 
-export { MenuIcon, InstagramIcon, YoutubeIcon, EmailIcon }
+function BehanceIcon(props: IconProps) {
+  return (
+    <svg
+      fill="currentColor"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="#267bcc"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        d="M7.5,5.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5a2,2,0,0,0-2-2Z"
+      />
+      <path
+        fill="none"
+        stroke="#267bcc"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M34.0045,29.6513a3.778,3.778,0,0,1-3.2838,1.9072h0a3.7792,3.7792,0,0,1-3.7792-3.7792V25.3227a3.7792,3.7792,0,0,1,3.7792-3.7792h0A3.7792,3.7792,0,0,1,34.5,25.3227V26.551H26.9415"
+      />
+      <path
+        fill="none"
+        stroke="#267bcc"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="0.8662"
+        d="M19.7358,24a3.7793,3.7793,0,0,1,0,7.5585H13.5V16.4415h6.2358a3.7793,3.7793,0,0,1,0,7.5585Z"
+      />
+      <line
+        fill="none"
+        stroke="#267bcc"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="0.8662"
+        x1="19.7358"
+        y1="24"
+        x2="13.5"
+        y2="24"
+      />
+      <line
+        fill="none"
+        stroke="#267bcc"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        x1="26.9415"
+        y1="16.4415"
+        x2="34.5"
+        y2="16.4415"
+      />
+    </svg>
+  )
+}
+
+export { MenuIcon, InstagramIcon, YoutubeIcon, EmailIcon, BehanceIcon }

@@ -46,7 +46,7 @@ export const artworks: Artwork[] = [
   {
     id: '5',
     title: 'Fragments of Eden',
-    imageUrl: '/collections/collection1/fragments_of_eden.png',
+    imageUrl: '/collections/collection1/fragments_of_eden.jpg',
     info: 'Oil on Canvas 80X100',
     category: 'collections',
     collectionId: 'lives-in-motion',

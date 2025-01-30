@@ -1,6 +1,11 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { EmailIcon, InstagramIcon, YoutubeIcon } from '@/app/components/Icons'
+import {
+  EmailIcon,
+  InstagramIcon,
+  YoutubeIcon,
+  BehanceIcon,
+} from '@/app/components/Icons'
 
 function Footer() {
   const [today, setToday] = useState<Date>()
@@ -36,6 +41,14 @@ function Footer() {
           className="hover:scale-125"
         >
           <EmailIcon width={30} height={30} fill="#267bcc" />
+        </a>
+
+        <a
+          href="https://www.behance.net/zeeforia"
+          target="_blank"
+          className="hover:scale-125"
+        >
+          <BehanceIcon width={30} height={30} fill="#267bcc" />
         </a>
       </div>
     </div>
