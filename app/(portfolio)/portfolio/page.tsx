@@ -3,14 +3,18 @@ import React, { useState, useEffect } from 'react'
 import CategoryTabs from '@/app/components/CategoryTabs'
 import { Controls } from '@/app/components/Controls'
 import { ArtworkGrid } from '@/app/components/ArtWorkGrid'
+import { CollectionSelector } from '@/app/components/CollectionSelector'
 
-import { artworks } from '@/app/constants/galleryData'
+import { artworks, collections } from '@/app/constants/galleryData'
 import type { SortOption, ArtWorkCategory } from '@/app/types'
 
 function PortfolioPage() {
   const [activeCategory, setActiveCategory] =
     useState<ArtWorkCategory>('collections')
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedCollectionId, setSelectedCollectionId] = useState<
+    string | null
+  >(collections.length > 0 ? collections[0].id : null)
   const [sortOption, setSortOption] = useState<SortOption>('newest')
   const [selectedTags, setSelectedTags] = useState<string[]>([])
 
@@ -20,9 +24,13 @@ function PortfolioPage() {
     return () => clearTimeout(timer)
   }, [activeCategory])
 
-  const filteredArtworks = artworks.filter(
-    artwork => artwork.category === activeCategory,
-  )
+  const filteredArtworks = artworks.filter(artwork => {
+    if (artwork.category !== activeCategory) return false
+    if (activeCategory === 'collections' && selectedCollectionId) {
+      return artwork.collectionId === selectedCollectionId
+    }
+    return true
+  })
 
   const availableTags = Array.from(
     new Set(filteredArtworks.flatMap(artwork => artwork.tags)),
@@ -34,9 +42,13 @@ function PortfolioPage() {
     )
   }
 
+  const selectedCollection = selectedCollectionId
+    ? collections.find(c => c.id === selectedCollectionId)
+    : null
+
   return (
     <div className=" min-h-screen w-full bg-gray-50">
-      <header className="bg-white shadow-sm">
+      <header className="bg-white shadow-sm pb-6">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-center mb-6">
             {/* <Gallery className="w-8 h-8 text-blue-600 mr-2" /> */}
@@ -52,20 +64,39 @@ function PortfolioPage() {
             onCategoryChange={setActiveCategory}
           />
         </div>
+        {activeCategory === 'collections' && (
+          <>
+            <CollectionSelector
+              collections={collections}
+              selectedCollectionId={selectedCollectionId}
+              onCollectionSelect={setSelectedCollectionId}
+            />
+            {selectedCollection && (
+              <div className="mt-6 text-center max-w-3xl mx-auto px-4 lg:px-0 ">
+                <h2 className="text-xl font-semibold text-steel_blue-400 mb-2 font-montserrat tracking-widest">
+                  {selectedCollection.collectionName}
+                </h2>
+                <p className="text-gray-600 leading-relaxed font-quicksand">
+                  {selectedCollection.collectionDescription}
+                </p>
+              </div>
+            )}
+          </>
+        )}
       </header>
 
       <main className="max-w-7xl mx-auto py-6">
         <Controls
-          category={activeCategory}
           sortOption={sortOption}
           onSortChange={setSortOption}
           availableTags={availableTags}
           selectedTags={selectedTags}
           onTagToggle={handleTagToggle}
         />
+
         <ArtworkGrid
-          artworks={filteredArtworks}
           isLoading={isLoading}
+          artworks={filteredArtworks}
           sortOption={sortOption}
           selectedTags={selectedTags}
         />

@@ -1,8 +1,7 @@
 import { clsx } from 'clsx'
-import { SortOption, ArtWorkCategory } from '@/app/types'
+import { SortOption } from '@/app/types'
 
 interface ControlsProps {
-  category: ArtWorkCategory
   sortOption: SortOption
   onSortChange: (option: SortOption) => void
   availableTags: string[]
@@ -11,7 +10,6 @@ interface ControlsProps {
 }
 
 export const Controls = ({
-  category,
   sortOption,
   onSortChange,
   availableTags,
@@ -19,10 +17,22 @@ export const Controls = ({
   onTagToggle,
 }: ControlsProps) => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 px-4 font-quicksand">
-      {category === 'collections' && (
+    <div
+      className={clsx(
+        ' mb-6 px-4 font-quicksand',
+        {
+          'flex flex-col md:flex-row  items-start md:items-center gap-4 justify-end':
+            availableTags.length === 0,
+        },
+        {
+          'flex flex-col md:flex-row  items-start md:items-center gap-4 justify-between':
+            availableTags.length > 0,
+        },
+      )}
+    >
+      {availableTags.length > 0 && (
         <div className="flex flex-row items-center justify-between gap-1">
-          <span>Collections:</span>
+          <span>Tags:</span>
           <div className="flex flex-wrap gap-2">
             {availableTags.map(tag => (
               <button
@@ -42,17 +52,19 @@ export const Controls = ({
           </div>
         </div>
       )}
-
-      <select
-        value={sortOption}
-        onChange={e => onSortChange(e.target.value as SortOption)}
-        className="px-3 py-1 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-steel_blue-500 font-quicksand"
-        aria-label="Sort artworks"
-      >
-        <option value="newest">Newest First</option>
-        <option value="oldest">Oldest First</option>
-        <option value="title">Title A-Z</option>
-      </select>
+      <div className="flex flex-row items-center justify-between gap-2">
+        <span>Sort by:</span>
+        <select
+          value={sortOption}
+          onChange={e => onSortChange(e.target.value as SortOption)}
+          className="px-3 py-1 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-steel_blue-500 font-quicksand"
+          aria-label="Sort artworks"
+        >
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="title">Title A-Z</option>
+        </select>
+      </div>
     </div>
   )
 }

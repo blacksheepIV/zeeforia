@@ -11,7 +11,7 @@ const CategoryTabs = ({
   onCategoryChange,
 }: CategoryTabsProps) => {
   return (
-    <div className="relative flex space-x-4 justify-center mb-8">
+    <div className="relative flex space-x-4 justify-center mb-8 font-montserrat">
       <button
         onClick={() => onCategoryChange('collections')}
         className={clsx(
