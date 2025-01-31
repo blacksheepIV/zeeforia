@@ -52,6 +52,9 @@ export const ArtworkGrid = ({
     <LightGallery
       speed={500}
       plugins={[lgThumbnail, lgZoom]}
+      closable={true}
+      closeOnTap={true}
+      controls={true}
       elementClassNames="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
     >
       {sortedArtworks.map(artwork => (
@@ -73,7 +76,7 @@ export const ArtworkGrid = ({
 
 const ArtworkCard = ({ artwork }: { artwork: Artwork }) => {
   return (
-    <div className="group relative overflow-hidden rounded-lg h-[auto] lg:h-[310]">
+    <div className="group relative overflow-hidden rounded-lg h-[212] md:h-[310]">
       <div className="w-full h-full transform group-hover:scale-110 transition-transform duration-500 rounded-lg">
         <Image
           src={`${artwork.imageUrl}`}
