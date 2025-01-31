@@ -1,6 +1,15 @@
 import { Artwork, SortOption } from '@/app/types'
 import Image from 'next/image'
 // import { LoadingSpinner } from './LoadingSpinner';
+import LightGallery from 'lightgallery/react'
+
+// import styles
+import 'lightgallery/css/lightgallery.css'
+import 'lightgallery/css/lg-zoom.css'
+import 'lightgallery/css/lg-thumbnail.css'
+
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
 
 interface ArtworkGridProps {
   artworks: Artwork[]
@@ -40,21 +49,32 @@ export const ArtworkGrid = ({
   })
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <LightGallery
+      speed={500}
+      plugins={[lgThumbnail, lgZoom]}
+      elementClassNames="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
+    >
       {sortedArtworks.map(artwork => (
-        <ArtworkCard key={artwork.id} artwork={artwork} />
+        <a
+          key={artwork.id}
+          href={artwork.imageUrl}
+          data-src={artwork.imageUrl}
+          data-sub-html={` <div className="flex flex-col gap-1">
+          <h3 className="text-lg lg:text-xl font-bold text-white">${artwork.title}</h3>
+          <p className="text-lg lg:text-xl text-gray-300">${artwork.info}</p>
+        </div>`}
+        >
+          <ArtworkCard key={artwork.id} artwork={artwork} />
+        </a>
       ))}
-    </div>
+    </LightGallery>
   )
 }
 
 const ArtworkCard = ({ artwork }: { artwork: Artwork }) => {
   return (
-    <div
-      key={artwork.title}
-      className="group relative overflow-hidden rounded-lg"
-    >
-      <div className="w-full h-full  transform group-hover:scale-110 transition-transform duration-500 rounded-lg">
+    <div className="group relative overflow-hidden rounded-lg h-[auto] lg:h-[310]">
+      <div className="w-full h-full transform group-hover:scale-110 transition-transform duration-500 rounded-lg">
         <Image
           src={`${artwork.imageUrl}`}
           alt={artwork.title}
