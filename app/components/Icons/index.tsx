@@ -64,7 +64,7 @@ function EmailIcon(props: IconProps) {
   )
 }
 
-function BehanceIcon(props: IconProps) {
+function BehanceIcon({ fill = '#000', ...props }: IconProps) {
   return (
     <svg
       fill="currentColor"
@@ -74,7 +74,7 @@ function BehanceIcon(props: IconProps) {
     >
       <path
         fill="none"
-        stroke="#267bcc"
+        stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
@@ -82,14 +82,14 @@ function BehanceIcon(props: IconProps) {
       />
       <path
         fill="none"
-        stroke="#267bcc"
+        stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M34.0045,29.6513a3.778,3.778,0,0,1-3.2838,1.9072h0a3.7792,3.7792,0,0,1-3.7792-3.7792V25.3227a3.7792,3.7792,0,0,1,3.7792-3.7792h0A3.7792,3.7792,0,0,1,34.5,25.3227V26.551H26.9415"
       />
       <path
         fill="none"
-        stroke="#267bcc"
+        stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="0.8662"
@@ -97,7 +97,7 @@ function BehanceIcon(props: IconProps) {
       />
       <line
         fill="none"
-        stroke="#267bcc"
+        stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="0.8662"
@@ -108,7 +108,7 @@ function BehanceIcon(props: IconProps) {
       />
       <line
         fill="none"
-        stroke="#267bcc"
+        stroke={fill}
         strokeLinecap="round"
         strokeLinejoin="round"
         x1="26.9415"
@@ -120,4 +120,56 @@ function BehanceIcon(props: IconProps) {
   )
 }
 
-export { MenuIcon, InstagramIcon, YoutubeIcon, EmailIcon, BehanceIcon }
+function ExternalLinkIcon({ fill = '#000', ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g id="Interface / External_Link">
+        <path
+          id="Vector"
+          d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+          stroke={fill}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+  )
+}
+
+function CloseIcon({ fill = '#000', ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g id="Menu / Close_LG">
+        <path
+          id="Vector"
+          d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+          stroke={fill}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+    </svg>
+  )
+}
+
+export {
+  MenuIcon,
+  InstagramIcon,
+  YoutubeIcon,
+  EmailIcon,
+  BehanceIcon,
+  ExternalLinkIcon,
+  CloseIcon,
+}
