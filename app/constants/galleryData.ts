@@ -53,6 +53,16 @@ export const artworks: Artwork[] = [
     tags: [],
     date: '2025-01-28T02:44:33.326Z',
   },
+  {
+    id: '12',
+    title: 'Sensual Fracture',
+    imageUrl: '/collections/collection1/sensual_fracture.jpg',
+    info: 'Oil on Canvas 80X100',
+    category: 'collections',
+    collectionId: 'lives-in-motion',
+    tags: [],
+    date: '2025-02-13T09:38:08.048Z',
+  },
 
   {
     id: '6',
@@ -101,6 +111,15 @@ export const artworks: Artwork[] = [
     category: 'on the wall',
     tags: [],
     date: '2025-01-29T04:39:48.623Z',
+  },
+  {
+    id: '11',
+    title: 'Sensual Fracture',
+    imageUrl: '/wall/sensual_fracture.jpg',
+    info: '',
+    category: 'on the wall',
+    tags: [],
+    date: '2025-02-13T09:38:08.048Z',
   },
 ]
 

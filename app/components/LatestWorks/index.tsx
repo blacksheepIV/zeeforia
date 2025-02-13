@@ -5,11 +5,11 @@ import { SpotlightArtworks } from '@/app/types'
 
 function LatestWorks() {
   const latestWorks: SpotlightArtworks[] = [
-    {
-      title: 'Fragmented Harmony',
-      imageUrl: 'fragmented_harmony.jpg',
-      info: 'Oil on Canvas 80X100',
-    },
+    // {
+    //   title: 'Fragmented Harmony',
+    //   imageUrl: 'fragmented_harmony.jpg',
+    //   info: 'Oil on Canvas 80X100',
+    // },
     {
       title: 'Melody in Fragment',
       imageUrl: 'melody_in_fragments.jpg',
@@ -18,6 +18,11 @@ function LatestWorks() {
     {
       title: 'Power',
       imageUrl: 'power.jpg',
+      info: 'Oil on Canvas 80X100',
+    },
+    {
+      title: 'Sensual Fracture',
+      imageUrl: 'sensual_fracture.jpg',
       info: 'Oil on Canvas 80X100',
     },
   ]
