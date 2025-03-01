@@ -34,7 +34,7 @@ function LatestWorks() {
       <div className="w-full">
         <h2 className="font-montserrat font-semibold text-xl text-delft_blue mb-6 tracking-widest">
           Latest
-          <span className="text-amaranth_purple tracking-widest"> Works</span>
+          <span className="text-orange-500 tracking-widest"> Works</span>
         </h2>
         <p className="text-base font-normal mb-6 font-quicksand">
           Explore Zeeforia&apos;s latest creations, showcasing recent
@@ -70,7 +70,7 @@ function LatestWorks() {
           className="mt-12 flex justify-center align-middle"
           href="/portfolio"
         >
-          <button className="rounded-md bg-delft_blue text-white text-center font-quicksand p-3 hover:transition-colors hover:bg-opacity-90">
+          <button className="rounded-md bg-orange-500 text-white text-center font-quicksand p-3 hover:transition-colors hover:bg-opacity-90">
             See All Works
           </button>
         </Link>

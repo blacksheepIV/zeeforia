@@ -14,7 +14,7 @@ function Footer() {
     setToday(currentDate)
   }, [])
   return (
-    <div className="w-full h-32 font-quicksand pt-2  px-6 hidden lg:flex lg:flex-col lg:justify-center lg:items-center bg-white shadow-custom">
+    <div className="w-full h-32 font-quicksand pt-2  px-6  flex flex-col justify-center items-center bg-white shadow-custom">
       {/* <div className="h-[0.5px] w-[50%] bg-fade-gradiant mb-3"></div> */}
 
       <div className="w-full flex gap-x-2 justify-center items-center">

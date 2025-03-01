@@ -6,7 +6,7 @@ function Contact() {
       <div className="flex flex-col gap">
         <h2 className="font-montserrat font-semibold text-xl text-delft_blue mb-6 tracking-widest">
           Get in
-          <span className="text-amaranth_purple tracking-widest"> Touch</span>
+          <span className="text-orange-500 tracking-widest"> Touch</span>
         </h2>
         <p className="text-base font-normal mb-6 font-quicksand">
           Zeefora loves connecting with art enthusiasts, collaborators, and

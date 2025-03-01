@@ -10,10 +10,10 @@ export default function Home() {
       <VideoPlayer />
 
       <div className="absolute top-[120px] left-8 flex flex-col items-start justify-center">
-        <h1 className="sm:text-4xl md:text-6xl font-bold text-white animate-slide-in-left">
+        <h1 className="sm:text-4xl md:text-6xl font-bold text-delft_blue-100 animate-slide-in-left">
           Zeef Oria
         </h1>
-        <p className="sm:text-lg md:text-xl text-white animate-slide-in-left mt-5">
+        <p className="sm:text-lg md:text-xl text-orange-700 animate-slide-in-left mt-5 ">
           Discover Zeef Oria’s journey from silence to a vibrant artistic
           revival, celebrating memory, resilience, and rediscovery.
         </p>

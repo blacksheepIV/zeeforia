@@ -40,7 +40,7 @@ function AboutSection() {
         >
           <h2 className="font-semibold text-xl text-delft_blue tracking-widest">
             About ZEEF{' '}
-            <span className="text-amaranth_purple tracking-widest">ORIA</span>
+            <span className="text-orange-500 tracking-widest">ORIA</span>
           </h2>
           <p className="text-base sm:text-md lg:text-base text-raisin_black-400 text-left">
             Born in 1972, Zeef Oria is a contemporary artist whose journey in

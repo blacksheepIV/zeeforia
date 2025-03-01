@@ -14,8 +14,7 @@ function VideoPlayer() {
       autoPlay
       loop
       muted
-      className="w-full h-screen object-cover"
-      poster="/fallback-hero.jpeg"
+      className="w-full h-screen object-cover filter blur-sm"
       onError={() => setVideoError(true)}
     >
       <source src="/hero.mp4" type="video/mp4" />

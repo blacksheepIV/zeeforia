@@ -54,9 +54,7 @@ function PortfolioPage() {
             {/* <Gallery className="w-8 h-8 text-blue-600 mr-2" /> */}
             <h1 className="text-3xl font-bold text-delft_blue tracking-widest">
               Portfolio{' '}
-              <span className="text-amaranth_purple tracking-widest">
-                Gallery
-              </span>
+              <span className="text-orange-500 tracking-widest">Gallery</span>
             </h1>
           </div>
           <CategoryTabs

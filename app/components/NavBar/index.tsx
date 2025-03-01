@@ -79,7 +79,7 @@ function Navbar() {
                 key={`${index}-${navItem.title}`}
                 className={clsx(
                   'font-montserrat text-base font-medium pb-2 cursor-pointer relative transition-all duration-300 hover:translate-y-[-2px] hover:opacity-80',
-                  { 'text-white': !isScrolled },
+                  { 'text-delft_blue-400': !isScrolled },
                   {
                     'text-black hover:text-raisin_black-800': isScrolled,
                   },
@@ -94,7 +94,7 @@ function Navbar() {
           className="burger lg:hidden sm:block "
           onClick={() => setIsMenuOpen(true)}
         >
-          <MenuIcon fill={isScrolled ? '#000' : '#fff'} className="size-8" />
+          <MenuIcon fill={'#f97316'} className="size-8" />
         </button>
         <div
           className={clsx(

@@ -22,15 +22,15 @@ export const CollectionSelector = ({
           onClick={() => onCollectionSelect(collection.id)}
           className={clsx(
             'relative px-6 py-3 rounded-lg transition-all duration-200',
-            'focus:outline-none focus:ring-2 focus:ring-steel_blue-500',
+            'focus:outline-none focus:ring-2 focus:ring-orange-500',
             selectedCollectionId === collection.id
-              ? 'bg-delft_blue text-white shadow-lg'
+              ? 'bg-orange-800 text-white shadow-lg'
               : 'bg-white text-gray-700 hover:bg-gray-50 shadow',
           )}
         >
           <span className="relative z-10">{collection.collectionName}</span>
           {selectedCollectionId === collection.id && (
-            <div className="absolute inset-0 bg-delft_blue rounded-lg"></div>
+            <div className="absolute inset-0 bg-orange-500 rounded-lg"></div>
           )}
         </button>
       ))}
